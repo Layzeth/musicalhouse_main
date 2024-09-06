@@ -44,4 +44,11 @@ public class Track {
             inverseJoinColumns = @JoinColumn(name = "artist_id")
     )
     private List<Artist> contributors;
+
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private Long reproductionCount;
+
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private Long downloadCount;
+
 }

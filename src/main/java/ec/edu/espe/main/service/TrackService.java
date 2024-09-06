@@ -36,4 +36,15 @@ public class TrackService {
         }
     }
 
+    public void incrementDownloadCount(String fileIdentifier) {
+        var track = findByFileIdentifier(fileIdentifier);
+        track.setDownloadCount(track.getDownloadCount() + 1);
+        repository.save(track);
+    }
+
+    public void incrementReproductionCount(String fileIdentifier) {
+        var track = findByFileIdentifier(fileIdentifier);
+        track.setReproductionCount(track.getReproductionCount() + 1);
+        repository.save(track);
+    }
 }
